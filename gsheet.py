@@ -1,12 +1,11 @@
 import os
 
 import gspread
-from google.oauth2.service_account import Credentials
 
 from oauth2client.service_account import ServiceAccountCredentials
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-# TODO: write into gsheet
+
 
 def insert_matrix(spreadsheet_url:str, sheet_name:str, start_cell:str, data_list:list, credential_path:str):
     """
@@ -69,3 +68,5 @@ def col_index_to_letter(index):
     return letters
 
 
+if __name__ == '__main__':
+    print('working')
