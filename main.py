@@ -12,4 +12,5 @@ def formatize():
     print('soc')
     print('cccsss')
     print('ddd')
+    r = []
     pass
