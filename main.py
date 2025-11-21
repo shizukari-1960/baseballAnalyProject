@@ -15,4 +15,6 @@ def formatize():
 
     print('ddd')
     print('eee')
+
+    print('fff')
     pass
