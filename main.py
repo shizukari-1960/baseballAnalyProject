@@ -7,4 +7,5 @@ def formatize():
     print('aaa')
     print('ccc')
     print('bbb')
+    print('dora')
     pass
