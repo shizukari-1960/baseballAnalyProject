@@ -11,10 +11,7 @@ import pandas as pd
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
-def webdrive_init():
-    batch_path = 'E:\\VSC_workspace\\PpFinal\\baseballAnalyProject\\bin\\chrome.bat'
-    os.system(batch_path)
-    sleep(5)
+def webdrive_init() -> webdriver.Chrome: 
 
     option = Options()
     option.add_experimental_option('debuggerAddress', '127.0.0.1:9527')
@@ -24,8 +21,10 @@ def webdrive_init():
 
 dr = webdrive_init()
 
-#url = 'https://www.rebas.tw/tournament/CPBL-2025-JO/firstbase/full'
-#dr.get(url)
 
+url = 'https://www.rebas.tw/tournament/CPBL-2025-JO/firstbase/full'
+dr.get(url)
+
+#repo merger test branch edit
 
 
