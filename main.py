@@ -13,4 +13,6 @@ def formatize():
     print('cccsss')
     print('ddd')
     r = []
+    h = []
+    h = [1, 2, 3]
     pass
