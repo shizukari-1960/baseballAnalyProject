@@ -8,4 +8,6 @@ def formatize():
     print('ccc')
     print('bbb')
     print('dora')
+
+    print('soc')
     pass
