@@ -12,10 +12,7 @@ def formatize():
     print('soc')
     print('cccsss')
     print('ddd')
-
-    print('ddd')
-    print('eee')
-
-    print('fff')
-    print('ggg')
+    r = []
+    h = []
+    h = [1, 2, 3]
     pass
