@@ -17,4 +17,5 @@ def formatize():
     print('eee')
 
     print('fff')
+    print('ggg')
     pass
