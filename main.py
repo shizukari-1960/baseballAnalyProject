@@ -10,4 +10,5 @@ def formatize():
     print('dora')
 
     print('soc')
+    print('cccsss')
     pass
