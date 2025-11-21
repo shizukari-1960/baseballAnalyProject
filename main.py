@@ -14,4 +14,5 @@ def formatize():
     print('ddd')
     r = []
     h = []
+    h = [1, 2, 3]
     pass
