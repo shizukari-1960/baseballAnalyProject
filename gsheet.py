@@ -4,7 +4,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from bin.bin import sheet_url
 
-from bin.bin import sheet_url
+
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
