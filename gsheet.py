@@ -1,13 +1,13 @@
 import os
 
 import gspread
-
 from oauth2client.service_account import ServiceAccountCredentials
 
+from bin.bin import sheet_url
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
-def insert_matrix(spreadsheet_url:str, sheet_name:str, start_cell:str, data_list:list, credential_path:str):
+def insert_matrix(sheet_name:str, start_cell:str, data_list:list, credential_path:str, spreadsheet_url = sheet_url):
     """
     在指定sheet，從指定格開始插入一定範圍資料。
 

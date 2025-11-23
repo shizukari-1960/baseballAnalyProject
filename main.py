@@ -1,8 +1,9 @@
-
+import os
 
 import gsheet
 import selen
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 def formatize():
     pass
 
