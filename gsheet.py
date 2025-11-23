@@ -2,19 +2,20 @@ import os
 
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from bin.bin import sheet_url
 
 from bin.bin import sheet_url
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
-def insert_matrix(sheet_name:str, start_cell:str, data_list:list, credential_path:str, spreadsheet_url = sheet_url):
+def insert_matrix(sheet_name:str, start_cell:str, data_list:list, credential_path:str, spreadsheet_url=sheet_url):
     """
     在指定sheet，從指定格開始插入一定範圍資料。
 
     :param spreadsheet_url: sheet網址
     :param sheet_name: 工作表名稱
     :param start_cell: 起始cell
-    :param data_list: 插入資料, list in list matrix格式
+    :param data_list: 插入資料, row_list in list matrix格式
     :param credential_path: google api 密鑰路徑
     """
 
