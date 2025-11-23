@@ -25,7 +25,4 @@ dr = webdrive_init()
 url = 'https://www.rebas.tw/tournament/CPBL-2025-JO/firstbase/full'
 dr.get(url)
 
-#repo merger test branch edit
-#aaa
-#bbb
 
