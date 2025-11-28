@@ -19,10 +19,30 @@ def webdrive_init() -> webdriver.Chrome:
     
     return dr
 
-dr = webdrive_init()
 
+if __name__ == '__main__':
+    dr = webdrive_init()
+    url = 'https://www.rebas.tw/tournament/CPBL-2025-JO/firstbase/full'
+    dr.get(url)
 
-url = 'https://www.rebas.tw/tournament/CPBL-2025-JO/firstbase/full'
-dr.get(url)
+    sleep(15) # wait loading
+    
+    def select_table(table_name: str):
+        name_xpath = {
+            '中職2025年': {
+                'button': '/html/body/div[1]/div/div[1]/div[2]/div/div[1]/div[2]/div[8]/a[1]/button',
+                'team_strike_button' : '/html/body/div[1]/div/div[1]/div[2]/div/div[2]/div[1]',
+                'team_pitch_button' : '/html/body/div[1]/div/div[1]/div[2]/div/div[2]/div[2]',
+
+                'league_atk_sumup_table' : '/html/body/div[1]/div/div[1]/div[2]/div/div[3]/div[2]/div/table[1]',
+                'team_atk_sumup_table' : '/html/body/div[1]/div/div[1]/div[2]/div/div[3]/div[2]/div/table[2]',
+
+                'league_strike_sumup_table' : '/html/body/div[1]/div/div[1]/div[2]/div/div[3]/div[2]/div/table[1]',
+                'team_strike_sumup_table' : '/html/body/div[1]/div/div[1]/div[2]/div/div[3]/div[2]/div/table[2]',
+
+                
+            }
+        }
+
 
 
