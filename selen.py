@@ -25,7 +25,7 @@ def webdrive_init() -> webdriver.Chrome:
 
 
 
-def get_table(team_name: str, tag_name:str, table_name: str) -> pd.DataFrame:
+def get_table(dr: webdriver.Chrome ,team_name: str, tag_name:str, table_name: str) -> pd.DataFrame:
     """
     Select a designated table in website, and return a pd datafrome.
     
@@ -67,7 +67,7 @@ if __name__ == '__main__':
 
     #sleep(15) # wait loading
     
-    print(get_table('FBG', 'bat', 'bat_score_table'))
+    print(get_table(dr,'RKMK', 'pitch', 'pitch_data_table'))
 
     
 
