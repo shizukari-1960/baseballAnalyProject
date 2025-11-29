@@ -28,13 +28,35 @@ button_tables_storage = {
         'team_pitch_score_sumup_table' : '//*[@id="app-content"]/div/div[3]/div[8]/div/table[2]'     
     },
     'CTBC':{
-        'button': '//*[@id="app-content"]/div/div[1]/div[2]/div[8]/a[2]/button',
+        'button': '//*[@id="app-content"]/div/div[1]/div[2]/div[8]/a[2]/button'
+    },
+    'TSGH':{
+        'button': '//*[@id="app-content"]/div/div[1]/div[2]/div[8]/a[3]/button'
+    },
+    'WCG':{
+        'button': '//*[@id="app-content"]/div/div[1]/div[2]/div[8]/a[4]/button'
+    },
+    'FBG':{
+        'button': '//*[@id="app-content"]/div/div[1]/div[2]/div[8]/a[5]/button'
+    },
+    'RKMK':{
+        'button': '//*[@id="app-content"]/div/div[1]/div[2]/div[8]/a[6]/button'
+    },
+    'UNL':{
+        'button': '//*[@id="app-content"]/div/div[1]/div[2]/div[8]/a[7]/button'
+    }, #sacrifice for main readbility.
+    'team':{
         #---------------------------bat area---------------------------
         'bat': '//*[@id="app-content"]/div/div[2]/div[1]',
         
         'bat_atk_table': '//*[@id="app-content"]/div/div[3]/div[8]/div/table[2]',
         'bat_balls_table': '//*[@id="app-content"]/div/div[3]/div[11]/div/table[2]',
         'bat_score_table': '//*[@id="app-content"]/div/div[3]/div[14]/div/table[2]',
+        #---------------------------pitch area---------------------------
+        'pitch': '//*[@id="app-content"]/div/div[2]/div[2]',
 
+        'pitch_data_table': '//*[@id="app-content"]/div/div[3]/div[8]/div[1]/table[2]',
+        'pitch_content_table': '//*[@id="app-content"]/div/div[3]/div[11]/div[1]/table[2]',
+        'pitch_score_table': '//*[@id="app-content"]/div/div[3]/div[14]/div[1]/table[2]'
     }
 }

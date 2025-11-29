@@ -42,13 +42,15 @@ def get_table(team_name: str, tag_name:str, table_name: str) -> pd.DataFrame:
         raise ValueError(f'{team_name}不是一個可選的隊伍。')
     if tag_name not in tags:
         raise ValueError(f'{tag_name} 不是一個可選的表格種類。')
-    if table_name not in button_tables_storage[team_name].keys():
+    if table_name not in button_tables_storage['team'].keys():
         raise ValueError(f'{table_name}不是一個可選的表。')
     
     body = dr.find_element(By.XPATH, '//*[@id="app-content"]/div/div[1]')
     dr.execute_script("arguments[0].scrollIntoView(true);", body)
 
     dr.find_element(By.XPATH, button_tables_storage[team_name]['button']).click()#change team
+    if team_name != 'league':
+        team_name = 'team' #simplify xpath storage, tables at same xpath
     dr.find_element(By.XPATH, button_tables_storage[team_name][tag_name]).click() #change tag
 
     table = dr.find_element(By.XPATH, button_tables_storage[team_name][table_name]).get_attribute('outerHTML')
@@ -65,7 +67,7 @@ if __name__ == '__main__':
 
     #sleep(15) # wait loading
     
-    print(get_table('CTBC', 'bat', 'bat_score_table'))
+    print(get_table('FBG', 'bat', 'bat_score_table'))
 
     
 
