@@ -67,7 +67,7 @@ if __name__ == '__main__':
 
     #sleep(15) # wait loading
     
-    print(get_table(dr,'RKMK', 'pitch', 'pitch_data_table'))
+    print(get_table(dr,'T', 'pitch', 'pitch_data_table'))
 
     
 

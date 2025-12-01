@@ -7,7 +7,14 @@ from bin.bin import sheet_url
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
-def insert_matrix(sheet_name:str, start_cell:str, data_list:list, credential_path:str, spreadsheet_url=sheet_url):
+#a = [
+#    [1,4],
+#    [2,5],
+#    [2,6]
+#]
+
+
+def insert_matrix(sheet_name:str, start_cell:str, data_list:list, credential_path= 'bin\bbanaly-0af553cbfd7d.json', spreadsheet_url=sheet_url):
     """
     在指定sheet，從指定格開始插入一定範圍資料。
 
