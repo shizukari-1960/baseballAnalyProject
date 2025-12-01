@@ -1,4 +1,4 @@
-teams_alias = ['league','CTBC','TSGH', 'WCG', 'FBG', 'RKMK', 'UNL']
+teams_alias = ['league','B','T', 'W', 'G', 'R', 'UL']
 tags = ['bat', 'pitch']
 button_tables_storage = {
     
@@ -27,22 +27,22 @@ button_tables_storage = {
         'league_pitch_score_sumup_table': '//*[@id="app-content"]/div/div[3]/div[8]/div/table[1]',
         'team_pitch_score_sumup_table' : '//*[@id="app-content"]/div/div[3]/div[8]/div/table[2]'     
     },
-    'CTBC':{
+    'B':{
         'button': '//*[@id="app-content"]/div/div[1]/div[2]/div[8]/a[2]/button'
     },
-    'TSGH':{
+    'T':{
         'button': '//*[@id="app-content"]/div/div[1]/div[2]/div[8]/a[3]/button'
     },
-    'WCG':{
+    'W':{
         'button': '//*[@id="app-content"]/div/div[1]/div[2]/div[8]/a[4]/button'
     },
-    'FBG':{
+    'G':{
         'button': '//*[@id="app-content"]/div/div[1]/div[2]/div[8]/a[5]/button'
     },
-    'RKMK':{
+    'R':{
         'button': '//*[@id="app-content"]/div/div[1]/div[2]/div[8]/a[6]/button'
     },
-    'UNL':{
+    'UL':{
         'button': '//*[@id="app-content"]/div/div[1]/div[2]/div[8]/a[7]/button'
     }, #sacrifice for main readbility.
     'team':{
