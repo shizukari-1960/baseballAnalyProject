@@ -7,6 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+import numpy as np
 
 from xpathData import teams_alias, tags, button_tables_storage
 
@@ -56,8 +57,9 @@ def get_table(dr: webdriver.Chrome ,team_name: str, tag_name:str, table_name: st
     table = dr.find_element(By.XPATH, button_tables_storage[team_name][table_name]).get_attribute('outerHTML')
 
     dft = pd.read_html(table)[0]
-
-    return dft
+    dft.replace(np.inf, 'N/A', inplace=True)
+    dft.replace(-np.inf, 'N/A', inplace=True)
+    return dft.fillna('N/A')
 
 
 if __name__ == '__main__':
