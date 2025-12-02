@@ -14,7 +14,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 #]
 
 
-def insert_matrix(sheet_name:str, start_cell:str, data_list:list, credential_path= 'bin\bbanaly-0af553cbfd7d.json', spreadsheet_url=sheet_url):
+def insert_matrix(sheet_name:str, start_cell:str, data_list:list, credential_path= 'bin\\bbanaly-0af553cbfd7d.json', spreadsheet_url=sheet_url):
     """
     在指定sheet，從指定格開始插入一定範圍資料。
 
