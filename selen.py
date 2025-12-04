@@ -58,9 +58,8 @@ def get_table(dr: webdriver.Chrome ,team_name: str, tag_name:str, table_name: st
 
     dft = pd.read_html(table)[0]
     
-    dft.replace(np.inf, 'N/A', inplace=True)
-    dft.replace(-np.inf, 'N/A', inplace=True)
-    dft.fillna('N/A')
+    dft.replace([np.inf, -np.inf], 'N/A', inplace=True)
+    dft.fillna('N/A', inplace=True)
 
     return dft
 
