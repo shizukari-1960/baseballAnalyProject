@@ -1,13 +1,13 @@
 import os
 from time import sleep
 
+import numpy as np
 import pandas as pd
 from pprint import pprint
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-import numpy as np
 
 from xpathData import teams_alias, tags, button_tables_storage
 
@@ -34,7 +34,7 @@ def get_table(dr: webdriver.Chrome ,team_name: str, tag_name:str, table_name: st
     :type team_name: str
     :param tag_name: page tag name (pitch and strike), in alias.
     :type tag_name: str
-    :param table_name: table name, in docs.
+    :param table_name: table name, in xpathData.py.
     :type table_name: str
     :return: table dataframe.
     :rtype: pd.DataFrame
@@ -43,13 +43,13 @@ def get_table(dr: webdriver.Chrome ,team_name: str, tag_name:str, table_name: st
         raise ValueError(f'{team_name}不是一個可選的隊伍。')
     if tag_name not in tags:
         raise ValueError(f'{tag_name} 不是一個可選的表格種類。')
-    if table_name not in button_tables_storage['team'].keys():
+    if table_name not in button_tables_storage['team'].keys() and table_name not in button_tables_storage['league'].keys():
         raise ValueError(f'{table_name}不是一個可選的表。')
     
     body = dr.find_element(By.XPATH, '//*[@id="app-content"]/div/div[1]')
     dr.execute_script("arguments[0].scrollIntoView(true);", body)
 
-    dr.find_element(By.XPATH, button_tables_storage[team_name]['button']).click()#change team
+    dr.find_element(By.XPATH, button_tables_storage[team_name]['button']).click() #change team
     if team_name != 'league':
         team_name = 'team' #simplify xpath storage, tables at same xpath
     dr.find_element(By.XPATH, button_tables_storage[team_name][tag_name]).click() #change tag
@@ -57,9 +57,11 @@ def get_table(dr: webdriver.Chrome ,team_name: str, tag_name:str, table_name: st
     table = dr.find_element(By.XPATH, button_tables_storage[team_name][table_name]).get_attribute('outerHTML')
 
     dft = pd.read_html(table)[0]
-    dft.replace(np.inf, 'N/A', inplace=True)
-    dft.replace(-np.inf, 'N/A', inplace=True)
-    return dft.fillna('N/A')
+    
+    dft.replace([np.inf, -np.inf], 'N/A', inplace=True)
+    dft.fillna('N/A', inplace=True)
+
+    return dft
 
 
 if __name__ == '__main__':
